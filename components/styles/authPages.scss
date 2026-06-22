@@ -1,0 +1,73 @@
+.Navbar{
+    background-color: #2b2b2be1;
+}
+.auth-page {
+  min-height: 100vh;
+  background: url("/images/pizza-bg.jpg") no-repeat center center/cover;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(3px);
+  }
+}
+
+.auth-container {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-card {
+  background: rgba(20, 20, 20, 0.9);
+  padding: 40px;
+  border-radius: 16px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+  text-align: center;
+
+  h2 {
+    color: #ff7a00;
+    margin-bottom: 25px;
+  }
+
+  input {
+    background: #2b2b2b;
+    border: none;
+    color: white;
+
+    &:focus {
+      box-shadow: 0 0 0 2px #ff7a00;
+      background: #2b2b2b;
+      color: white;
+    }
+  }
+}
+
+.auth-btn {
+  background: linear-gradient(135deg, #ff7a00, #ff9d2f);
+  border: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(255, 122, 0, 0.6);
+  }
+}
+
+.success-msg {
+  color: #4caf50;
+}
+
+.error-msg {
+  color: #ff4d4d;
+}

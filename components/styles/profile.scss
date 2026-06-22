@@ -1,0 +1,54 @@
+.profile-page1{
+  background-image: url("https://i.ibb.co/39vt2dNz/ivan-torres-MQUqbmsz-GGM-unsplash.jpg");
+    width: 100%;
+  min-height: 100vh;
+   background-blend-mode: color-burn;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+   background-color: #00000057;
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+s.profile-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.profile-card {
+  background: rgba(138, 120, 120, 0.856);
+  border: 2px solid #ff8c00;
+  border-radius: 14px;
+  padding: 2.7rem;
+  max-width: 750px;
+  width: 100%;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+  
+
+
+  h2 {
+    color: #000;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  label {
+    font-weight: 600;
+  }
+
+  button {
+    font-weight: bold;
+    background-color: #ff8c00;
+    border: none;
+    
+    &:hover {
+      background-color: darken(#ff8c00, 8%);
+    }
+  }
+}

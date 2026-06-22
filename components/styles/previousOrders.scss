@@ -1,0 +1,140 @@
+.previous-orders-main{
+    background: #0f0f0f;
+}
+.previous-orders {
+  background: #0f0f0f;
+  min-height: 100vh;
+  padding: 60px;
+  color: #fff;
+
+  h2 {
+    color: #ff7a00;
+    margin-bottom: 40px;
+  }
+
+  .orders-grid {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  .order-card {
+    background: #1a1a1a;
+    border-radius: 14px;
+    padding: 25px;
+    border: 1px solid #2a2a2a;
+    transition: 0.3s;
+
+    &:hover {
+      border-color: #ff7a00;
+      transform: translateY(-4px);
+    }
+
+    .order-date {
+      font-size: 14px;
+      color: #aaa;
+      margin-bottom: 10px;
+    }
+
+    .total {
+      font-size: 20px;
+      font-weight: 600;
+      color: #ff7a00;
+      margin-bottom: 20px;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        padding: 8px 14px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .details {
+        background: #333;
+        color: white;
+      }
+
+      .reorder {
+  background: #ff7a00;
+  color: black;
+  font-weight: 600;
+  transition: 0.3s ease;
+
+  &.success {
+    background: #28a745;
+    color: white;
+  }
+}
+    }
+  }
+
+  &.empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #ff7a00;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+}
+
+.details-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.details-box {
+  background: #1a1a1a;
+  padding: 30px;
+  width: 420px;
+  border-radius: 12px;
+  border: 1px solid #ff7a00;
+
+  h3 {
+    color: #ff7a00;
+    margin-bottom: 20px;
+  }
+
+  .detail-item {
+    margin-bottom: 15px;
+
+    .detail-sub {
+      font-size: 13px;
+      color: #aaa;
+    }
+
+    .detail-toppings {
+      font-size: 13px;
+      color: #ff7a00;
+    }
+  }
+
+  .close-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background: #ff7a00;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}

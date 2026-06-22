@@ -1,0 +1,126 @@
+.previous-orders-main {
+  background: #0f0f0f;
+}
+
+.previous-orders {
+  background: #0f0f0f;
+  min-height: 100vh;
+  padding: 60px;
+  color: #fff;
+}
+.previous-orders h2 {
+  color: #ff7a00;
+  margin-bottom: 40px;
+}
+.previous-orders .orders-grid {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+.previous-orders .order-card {
+  background: #1a1a1a;
+  border-radius: 14px;
+  padding: 25px;
+  border: 1px solid #2a2a2a;
+  transition: 0.3s;
+}
+.previous-orders .order-card:hover {
+  border-color: #ff7a00;
+  transform: translateY(-4px);
+}
+.previous-orders .order-card .order-date {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+.previous-orders .order-card .total {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ff7a00;
+  margin-bottom: 20px;
+}
+.previous-orders .order-card .actions {
+  display: flex;
+  justify-content: space-between;
+}
+.previous-orders .order-card .actions button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+.previous-orders .order-card .actions .details {
+  background: #333;
+  color: white;
+}
+.previous-orders .order-card .actions .reorder {
+  background: #ff7a00;
+  color: black;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+.previous-orders .order-card .actions .reorder.success {
+  background: #28a745;
+  color: white;
+}
+.previous-orders.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.previous-orders.empty button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #ff7a00;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* CENTERED BOX MODAL */
+.details-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.details-box {
+  background: #1a1a1a;
+  padding: 30px;
+  width: 420px;
+  border-radius: 12px;
+  border: 1px solid #ff7a00;
+}
+.details-box h3 {
+  color: #ff7a00;
+  margin-bottom: 20px;
+}
+.details-box .detail-item {
+  margin-bottom: 15px;
+}
+.details-box .detail-item .detail-sub {
+  font-size: 13px;
+  color: #aaa;
+}
+.details-box .detail-item .detail-toppings {
+  font-size: 13px;
+  color: #ff7a00;
+}
+.details-box .close-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background: #ff7a00;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=previousOrders.css.map */

@@ -1,0 +1,136 @@
+
+$max-page-width: 1080px;
+$container-max-width: 900px;
+$primary-color: #1a1a1a; 
+$secondary-color: #272727; 
+$background-color: #cfcdcd; 
+$gap-size: 20px;
+$border-radius: 8px;
+$accent-color: #e95420; 
+$secColor: #ff6347; 
+
+.come-visit-us {
+ 
+  text-align: center; 
+  padding: 40px $gap-size;
+  padding-top: 0;
+  background-color: $background-color;
+  background-color: rgb(235, 187, 133);
+  padding-bottom: 50px;
+
+  .container {
+    border-radius: 5%;
+    max-width: $max-page-width;
+    margin: 0 auto; 
+    padding-top: 60px;
+    background-color: #5e5e5e91;
+
+    h2 {
+      font-size: 2.5em;
+      color: $primary-color;
+      margin-bottom: $gap-size;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: $secondary-color;
+      line-height: 1.6;
+      margin-bottom: 40px;
+      max-width: 800px; 
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .image-grid {
+      
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: $gap-size;
+      max-width: $container-max-width;
+      margin: 0 auto; 
+      margin-bottom: 50px; 
+      padding-bottom: 50px;
+      margin-top: 15px;
+
+      .grid-item {
+        img {
+          width: 100%;
+          height: 100%; 
+          display: block;
+          border-radius: $border-radius;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+    
+    .event-hire-block {
+      padding-top: 20px;
+      margin-bottom: 50px; 
+
+      h2 {
+        font-size: 2em; 
+        color: $primary-color;
+        margin-bottom: 15px;
+      }
+
+      p {
+      
+        margin-bottom: 30px; 
+      }
+      
+      .call-to-action{
+        background-color: $accent-color; 
+        color: white; 
+        border: none;
+        padding: 15px 30px;
+        font-size: 1.1em;
+        font-weight: bold;
+        border-radius: 32px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 90%; 
+        max-width: 350px; 
+        display: block; 
+        margin: 30px auto 0 auto; 
+        
+        &:hover {
+          background-color: darken($accent-color, 10%);
+        }
+      }
+    }
+
+    .location-map {
+      margin: 0 auto;
+      max-width: 900px;
+      padding-top: 20px;
+      
+      h3 {
+        font-size: 1.8em;
+        color: $primary-color;
+        margin-bottom: 20px;
+      }
+
+      iframe {
+        width: 100%; 
+        height: 450px; 
+        border: 0;
+        border-radius: $border-radius;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .address-text {
+        margin-top: 15px;
+        font-weight: bold;
+        font-size: 1em;
+        color: $primary-color;
+        padding-bottom: 20px;
+      }
+    }
+  }
+
+
+  @media (max-width: 768px) {
+    .container .image-grid {
+      grid-template-columns: 1fr; 
+    }
+  }
+}

@@ -1,0 +1,107 @@
+.come-visit-us {
+  text-align: center;
+  padding: 40px 20px;
+  padding-top: 0;
+  background-color: #cfcdcd;
+  background-color: rgb(235, 187, 133);
+  padding-bottom: 50px;
+}
+.come-visit-us .container {
+  border-radius: 5%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-top: 60px;
+  background-color: rgba(94, 94, 94, 0.568627451);
+}
+.come-visit-us .container h2 {
+  font-size: 2.5em;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+.come-visit-us .container p {
+  font-size: 1.2em;
+  color: #272727;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.come-visit-us .container .image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+  margin-top: 15px;
+}
+.come-visit-us .container .image-grid .grid-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.come-visit-us .container .event-hire-block {
+  padding-top: 20px;
+  margin-bottom: 50px;
+}
+.come-visit-us .container .event-hire-block h2 {
+  font-size: 2em;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+}
+.come-visit-us .container .event-hire-block p {
+  margin-bottom: 30px;
+}
+.come-visit-us .container .event-hire-block .call-to-action {
+  background-color: #e95420;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 32px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 90%;
+  max-width: 350px;
+  display: block;
+  margin: 30px auto 0 auto;
+}
+.come-visit-us .container .event-hire-block .call-to-action:hover {
+  background-color: rgb(194.7836734694, 64.6367346939, 19.2163265306);
+}
+.come-visit-us .container .location-map {
+  margin: 0 auto;
+  max-width: 900px;
+  padding-top: 20px;
+}
+.come-visit-us .container .location-map h3 {
+  font-size: 1.8em;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+.come-visit-us .container .location-map iframe {
+  width: 100%;
+  height: 450px;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.come-visit-us .container .location-map .address-text {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 1em;
+  color: #1a1a1a;
+  padding-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .come-visit-us .container .image-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*# sourceMappingURL=local.css.map */

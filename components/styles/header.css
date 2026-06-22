@@ -1,0 +1,113 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border-left: none;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-left: none;
+  /* 🎬 VIDEO */
+}
+.header .header-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 101%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+.header {
+  /* 🌑 OVERLAY */
+}
+.header .video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75));
+  z-index: 1;
+}
+.header .container {
+  max-width: 1080px;
+}
+.header .header-content {
+  display: flex;
+  gap: 15%;
+  align-items: center;
+  width: 100%;
+  padding: 5px 8%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid rgba(138, 138, 138, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 3;
+}
+.header .header-content .Header-logo img {
+  width: 110px;
+  height: auto;
+}
+.header .main {
+  position: relative;
+  z-index: 2;
+  padding-top: 200px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+.header .main h1,
+.header .main h2 {
+  color: #ffffff;
+  font-weight: 800;
+  line-height: 80px;
+  font-family: "Oswald", sans-serif;
+  text-shadow: 0 5px 25px rgba(0, 0, 0, 0.6);
+}
+.header .main button {
+  border-radius: 30px;
+  background-color: #ff6347;
+  border: none;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 25px rgba(255, 99, 71, 0.5);
+}
+.header .main button:hover {
+  background-color: red;
+  transform: scale(1.05);
+}
+.header .main .call {
+  height: 70px;
+  width: 160px;
+}
+.header .main .order {
+  height: 50px;
+  width: 150px;
+}
+.header {
+  /* MOBILE */
+}
+@media (max-width: 768px) {
+  .header .main {
+    padding-top: 160px;
+  }
+  .header .main h1 {
+    font-size: 1.6rem;
+    line-height: 40px;
+  }
+  .header .main h2 {
+    font-size: 1.2rem;
+    line-height: 30px;
+  }
+}
+
+/*# sourceMappingURL=header.css.map */

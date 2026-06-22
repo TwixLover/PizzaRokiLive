@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Kitchen Panel</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body { background: #0f0f0f; color: white; }
+
+    .order-card {
+      background: #1c1c1c;
+      border-radius: 12px;
+      padding: 20px;
+      height: 420px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .items-container {
+      flex-grow: 1;
+      overflow-y: auto;
+      margin-bottom: 10px;
+      padding-right: 5px;
+    }
+
+    .item-box {
+      background: #262626;
+      padding: 8px 10px;
+      border-radius: 6px;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .status-select {
+      margin-top: auto;
+      background: #2d2d2d;
+      color: white;
+      border: 1px solid #444;
+    }
+
+    .total {
+      font-weight: 600;
+      color: #28d17c;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container py-4">
+  <h2 class="mb-4 text-warning">Orders</h2>
+
+  <div id="orders-container" class="row g-3">
+    <% orders.forEach(order => { %>
+      <div class="col-md-6 col-lg-4 order-wrapper" data-id="<%= order.id %>">
+        <div class="order-card">
+          <div>
+            <strong>
+              <%= order.delivery_first_name %> 
+              <%= order.delivery_last_name %>
+            </strong>
+            <div class="small text-secondary" style="display:flex; flex-direction:column;">
+                <%= order.delivery_street %> <%= order.delivery_house_number %>,
+                <br>
+                <%= order.delivery_phone %>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="items-container">
+            <% order.items.forEach(item => { %>
+              <div class="item-box">
+                <strong><%= item.quantity %>x <%= item.name || "Custom Pizza"%></strong>
+                <% if (item.size) { %>
+                  <div class="small text-muted">Size: <%= item.size %> cm</div>
+                <% } %>
+                <% if (item.toppings && item.toppings.length > 0) { %>
+                  <div class="small text-warning">
+                    <%= item.toppings.join(", ") %>
+                  </div>
+                <% } %>
+              </div>
+            <% }) %>
+          </div>
+
+          <div class="total">
+            Total: <%= order.total_amount %> RSD
+          </div>
+
+          <select class="form-select status-select" data-id="<%= order.id %>">
+            <option value="pending" <%= order.status === 'pending' ? 'selected' : '' %>>Pending</option>
+            <option value="in_progress" <%= order.status === 'in_progress' ? 'selected' : '' %>>In Progress</option>
+            <option value="ready" <%= order.status === 'ready' ? 'selected' : '' %>>Ready</option>
+            <option value="driver_on_the_way" <%= order.status === 'driver_on_the_way' ? 'selected' : '' %>>Driver on the way</option>
+            <option value="delivered">Delivered</option>
+          </select>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io();
+  const container = document.getElementById("orders-container");
+
+
+  document.addEventListener("change", async (e) => {
+    if (!e.target.classList.contains("status-select")) return;
+
+    const id = e.target.dataset.id;
+    const status = e.target.value;
+
+    await fetch(`/employee/${id}/status`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ status })
+    });
+  });
+
+
+  socket.on("new-order", (order) => {
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "col-md-6 col-lg-4 order-wrapper";
+    wrapper.dataset.id = order.id;
+
+    wrapper.innerHTML = `
+      <div class="order-card">
+        <div>
+          <strong>${order.delivery_first_name} ${order.delivery_last_name}</strong>
+          <div class="small text-secondary" style="display:flex; flex-direction:column;">
+            ${order.delivery_street} ${order.delivery_house_number},
+            <br>
+            ${order.delivery_phone}
+          </div>
+        </div>
+        <hr>
+        <div class="items-container">
+          ${order.items.map(item => `
+            <div class="item-box">
+              <strong>${item.quantity}x ${item.name || "Custom Pizza"}</strong>
+              ${item.size ? `<div class="small text-muted">Size: ${item.size} cm</div>` : ""}
+              ${item.toppings?.length ? `<div class="small text-warning">${item.toppings.join(", ")}</div>` : ""}
+            </div>
+          `).join("")}
+        </div>
+        <div class="total">
+          Total: ${order.total_amount} RSD
+        </div>
+        <select class="form-select status-select" data-id="${order.id}">
+          <option value="pending">Pending</option>
+          <option value="in_progress">In Progress</option>
+          <option value="ready">Ready</option>
+          <option value="driver_on_the_way">Driver on the way</option>
+          <option value="delivered">Delivered</option>
+        </select>
+      </div>
+    `;
+
+    container.prepend(wrapper);
+  });
+
+
+  socket.on("order-delivered", (data) => {
+    const el = document.querySelector(`[data-id="${data.id}"]`);
+    if (el) el.remove();
+  });
+
+</script>
+
+</body>
+</html>
