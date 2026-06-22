@@ -1,5 +1,4 @@
-
-const { Client, GatewayIntentBits } = require("discord.js");
+import { Client, GatewayIntentBits } from "discord.js";
 
 const client = new Client({
   intents: [GatewayIntentBits.Guilds]
@@ -16,13 +15,12 @@ client.once("ready", () => {
 
 client.login(process.env.DISCORD_TOKEN);
 
-const sendOrderNotification = (order) => {
-    console.log("Preparing to send Discord notification for order:", order.orderId);
+export const sendOrderNotification = (order) => {
+  console.log("Preparing to send Discord notification for order:", order.orderId);
+
   if (!channel) return;
-  
+
   channel.send(
-    `<@&1488267660759138404> \n 🍕 NEW ORDER!\n\n👤 ${order.delivery.first_name} ${order.delivery.last_name}\n📞 ${order.delivery.phone}\n💰 ${order.price} \n ${order.items.map(item => `- ${item.name} (${item.quantity})`).join('\n')}`
+    `<@&1488267660759138404>\n🍕 NEW ORDER!\n\n👤 ${order.delivery.first_name} ${order.delivery.last_name}\n📞 ${order.delivery.phone}\n💰 ${order.price}\n${order.items.map(item => `- ${item.name} (${item.quantity})`).join("\n")}`
   );
 };
-
-module.exports = { sendOrderNotification };
