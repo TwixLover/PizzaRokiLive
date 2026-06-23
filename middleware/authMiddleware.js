@@ -42,6 +42,7 @@ export const requireEmployee = (req, res, next) => {
 
   if (!token) {
     return res.status(401).send("Unauthorized");
+    console.log(err);
   }
 
   try {
