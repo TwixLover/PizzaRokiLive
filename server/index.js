@@ -89,7 +89,8 @@ const io = new Server(httpServer, {
   cors: {
     origin: [
   "http://localhost:5173",
-  "http://192.168.1.25:5173"
+  "http://192.168.1.25:5173",
+  "https://pizzarokilive-1.onrender.com/"
 ],
     credentials: true
   }
