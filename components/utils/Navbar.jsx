@@ -53,7 +53,7 @@ if (window.innerWidth <= 768 && isLoggedIn) { e.preventDefault(); setProfileOpen
   <nav className={navClass}>
     <ul>
       <div className="Header-logo">
-        <img src="https://i.ibb.co/xqKF3Wzp/logo-white.png" alt="logo white" border="0"></img>
+        <img src="https://i.ibb.co/xqKF3Wzp/logo-white.png" alt="Logo" />
       </div>
 
       <div className="nav">
