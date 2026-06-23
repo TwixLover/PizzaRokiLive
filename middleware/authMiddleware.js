@@ -55,5 +55,6 @@ export const requireEmployee = (req, res, next) => {
     next();
   } catch {
     return res.status(401).send("Invalid token");
+    console.log(err);
   }
 };
