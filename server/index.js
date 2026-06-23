@@ -20,7 +20,7 @@ app.disable("x-powered-by");
 
 app.use(cors({
   origin: ["http://localhost:5173",
-  "https://pizzarokilive-1.onrender.com/",
+  "https://pizzarokilive-1.onrender.com",
   ],
   credentials: true,
 }));
