@@ -97,7 +97,7 @@ router.post("/register", async (req, res) => {
       ]
     );
 
-    const verifyUrl = `http://localhost:5000/routes/verify-email/${token}`;
+    const verifyUrl = `https://pizzarokilive.onrender.com/routes/verify-email/${token}`;
 
     await transporter.sendMail({
       to: email,
@@ -135,7 +135,7 @@ router.get("/verify-email/:token", async (req, res) => {
     );
 
     if (result.rowCount === 0) {
-      return res.redirect(`http://localhost:5173/login?verified=false`);
+      return res.redirect(`https://pizzarokilive-1.onrender.com/login?verified=false`);
     }
 
     await pool.query(
@@ -149,11 +149,11 @@ router.get("/verify-email/:token", async (req, res) => {
       [result.rows[0].id]
     );
 
-    res.redirect(`http://localhost:5173/login?verified=true`);
+    res.redirect(`https://pizzarokilive-1.onrender.com/login?verified=true`);
 
   } catch (err) {
     console.error(err);
-    res.redirect(`http://localhost:5173/login?verified=false`);
+    res.redirect(`https://pizzarokilive-1.onrender.com/login?verified=false`);
   }
 });
 
@@ -198,7 +198,7 @@ router.post("/resend-verification", async (req, res) => {
       [hashedToken, expires, user.id]
     );
 
-    const verifyUrl = `http://localhost:5000/routes/verify-email/${token}`;
+    const verifyUrl = `https://pizzarokilive.onrender.com/routes/verify-email/${token}`;
 
     await transporter.sendMail({
       to: email,
@@ -396,7 +396,7 @@ router.post("/forgot-password", async (req, res) => {
       [hashedToken, expires, user.id]
     );
 
-    const resetUrl = `http://localhost:5173/reset-password/${token}`;
+    const resetUrl = `https://pizzarokilive-1.onrender.com/reset-password/${token}`;
 
     await transporter.sendMail({
       to: email,
