@@ -31,7 +31,7 @@ export default function PizzaBuilder() {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:5000/toppings/pizza-builder")
+    axios.get("https://pizzarokilive.onrender.com/toppings/pizza-builder")
       .then((res) => {
         const data = Array.isArray(res.data) ? res.data : [];
         setToppings(data);

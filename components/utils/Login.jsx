@@ -21,10 +21,10 @@ const Login = () => {
 
   const redirectByRole = (user) => {
     if (user.role === "admin") {
-      window.location.href = "http://localhost:5000/admin";
+      window.location.href = "https://pizzarokilive.onrender.com/admin";
     } 
     else if (user.role === "employee") {
-      window.location.href = "http://localhost:5000/employee";
+      window.location.href = "https://pizzarokilive.onrender.com/employee";
     } 
     else {
       navigate("/");
@@ -37,7 +37,7 @@ const Login = () => {
     setShowResend(false);
 
     try {
-      const res = await fetch("http://localhost:5000/routes/login", {
+      const res = await fetch("https://pizzarokilive.onrender.com/routes/login", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -71,7 +71,7 @@ const Login = () => {
     setResendMessage("");
 
     try {
-      const res = await fetch("http://localhost:5000/routes/resend-verification", {
+      const res = await fetch("https://pizzarokilive.onrender.com/routes/resend-verification", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -180,7 +180,7 @@ const Login = () => {
                   onSuccess={async (credentialResponse) => {
                     try {
                       const res = await fetch(
-                        "http://localhost:5000/routes/google-login",
+                        "https://pizzarokilive.onrender.com/routes/google-login",
                         {
                           method: "POST",
                           headers: {

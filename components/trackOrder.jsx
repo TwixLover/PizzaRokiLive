@@ -24,7 +24,7 @@ function TrackOrders() {
     try {
 
       const res = await axios.get(
-        "http://localhost:5000/orders/active-orders",
+        "https://pizzarokilive.onrender.com/orders/active-orders",
         { withCredentials: true }
       );
 

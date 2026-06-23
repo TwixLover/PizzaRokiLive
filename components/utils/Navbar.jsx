@@ -15,7 +15,7 @@ const cartCount = cart.length;
 useEffect(() => {
 const checkAuth = async () => {
 try {
-const res = await fetch("http://localhost:5000/routes/me", {
+const res = await fetch("https://pizzarokilive.onrender.com/routes/me", {
 credentials: "include",
 });
 
@@ -30,7 +30,7 @@ checkAuth();
 
 const handleLogout = async () => {
 try {
-await fetch("http://localhost:5000/routes/logout", {
+await fetch("https://pizzarokilive.onrender.com/routes/logout", {
 method: "POST",
 credentials: "include",
 });

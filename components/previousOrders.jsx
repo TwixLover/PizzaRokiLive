@@ -14,7 +14,7 @@ export default function PreviousOrders() {
   const { addToCart } = useCart();
 
   useEffect(() => {
-    axios.get("http://localhost:5000/orders/my-orders", {
+    axios.get("https://pizzarokilive.onrender.com/orders/my-orders", {
       withCredentials: true,
     })
     .then(res => setOrders(res.data))

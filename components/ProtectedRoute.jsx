@@ -7,7 +7,7 @@ const ProtectedRoute = ({ children }) => {
   const [authorized, setAuthorized] = useState(false);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/routes/me", {
+    axios.get("https://pizzarokilive.onrender.com/routes/me", {
       withCredentials: true
     })
     .then(() => {

@@ -47,7 +47,7 @@ const restaurantOpen = isRestaurantOpen();
     const fetchProfile = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:5000/profile",
+          "https://pizzarokilive.onrender.com/profile",
           { withCredentials: true }
         );
 
@@ -106,7 +106,7 @@ const restaurantOpen = isRestaurantOpen();
 
     try {
       await axios.post(
-        "http://localhost:5000/orders",
+        "https://pizzarokilive.onrender.com/orders",
         {
           items: cart,
           price: total,

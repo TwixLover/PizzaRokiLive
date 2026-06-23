@@ -23,7 +23,7 @@ const ResetPassword = () => {
     }
 
     const res = await fetch(
-      `http://localhost:5000/routes/reset-password/${token}`,
+      `https://pizzarokilive.onrender.com/routes/reset-password/${token}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
