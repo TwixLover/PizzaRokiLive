@@ -30,7 +30,7 @@ function Profile() {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/profile", {
+        const res = await axios.get("https://pizzarokilive.onrender.com/profile", {
           withCredentials: true,
         });
 
@@ -93,7 +93,7 @@ function Profile() {
 
       if (!payload.newPassword) delete payload.newPassword;
 
-      const res = await axios.put("http://localhost:5000/profile", payload, {
+      const res = await axios.put("https://pizzarokilive.onrender.com/profile", payload, {
         withCredentials: true,
       });
 
@@ -114,7 +114,7 @@ function Profile() {
 
     try {
       const res = await axios.put(
-        "http://localhost:5000/profile/google-update",
+        "https://pizzarokilive.onrender.com/profile/google-update",
         {
           credential: credentialResponse.credential,
           ...form,

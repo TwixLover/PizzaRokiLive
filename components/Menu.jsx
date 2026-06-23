@@ -13,7 +13,7 @@ const CustomizeModal = ({ item, onClose, onConfirm }) => {
     const fetchToppings = async () => {
       try {
         const res = await fetch(
-          `http://localhost:5000/toppings/${item.id}`
+          `https://pizzarokilive.onrender.com/toppings/${item.id}`
         );
         const data = await res.json();
         setToppings(data);
@@ -201,7 +201,7 @@ const Menu = () => {
 
   useEffect(() => {
     const fetchMenu = async () => {
-      const res = await fetch("http://localhost:5000/menu");
+      const res = await fetch("https://pizzarokilive.onrender.com/menu");
       const data = await res.json();
       setMenuItems(data);
     };
