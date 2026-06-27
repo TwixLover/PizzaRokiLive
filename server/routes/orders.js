@@ -10,12 +10,15 @@ const isRestaurantOpen = () => {
 
   const day = now.getDay(); 
   const hour = now.getHours();
+  console.log("SERVER TIME:", now.toString());
+console.log("DAY:", now.getDay());
+console.log("HOUR:", now.getHours());
 
   if (day === 3) {
     return false;
   }
 
-  if (hour < 13 || hour >= 23) {
+  if (hour < 12 || hour >= 22) {
     return false;
   }
 
