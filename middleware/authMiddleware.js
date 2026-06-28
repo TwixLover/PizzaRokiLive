@@ -38,11 +38,13 @@ export const requireAdmin = (req, res, next) => {
 };
 
 export const requireEmployee = (req, res, next) => {
+  console.log("Cookies:", req.cookies);
+  console.log("Token:", req.cookies.token);
+
   const token = req.cookies.token;
 
   if (!token) {
     return res.status(401).send("Unauthorized");
-    console.log(err);
   }
 
   try {
