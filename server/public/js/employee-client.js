@@ -17,7 +17,6 @@
     });
   });
 
-;
   socket.on("new-order", (order) => {
 
     const wrapper = document.createElement("div");
