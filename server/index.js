@@ -14,7 +14,7 @@ import { Server } from "socket.io";
 import helmet from "helmet";
 
 const app = express();
-
+app.set("trust proxy", true);
 app.use(helmet());
 app.disable("x-powered-by");
 
