@@ -27,9 +27,7 @@ export default function Checkout() {
 
 const isRestaurantOpen = () => {
   const now = new Date();
-  console.log("SERVER TIME:", now.toString());
-console.log("DAY:", now.getDay());
-console.log("HOUR:", now.getHours());
+
   const day = now.getDay();
   const hour = now.getHours();
 
