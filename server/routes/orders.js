@@ -4,9 +4,7 @@ import db from "../db.js";
 import { sendOrderNotification } from "../discordBot.js";
 
 const router = express.Router();
-console.log("SERVER TIME:", now.toString());
-console.log("DAY:", now.getDay());
-console.log("HOUR:", now.getHours());
+
 const isRestaurantOpen = () => {
   const now = new Date();
 

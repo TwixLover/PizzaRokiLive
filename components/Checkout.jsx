@@ -23,6 +23,9 @@ export default function Checkout() {
   const [notes, setNotes] = useState("");
   const [loadingProfile, setLoadingProfile] = useState(true);
   const [submitting, setSubmitting] = useState(false);
+    console.log("SERVER TIME:", now.toString());
+console.log("DAY:", now.getDay());
+console.log("HOUR:", now.getHours());
 
 const isRestaurantOpen = () => {
   const now = new Date();
