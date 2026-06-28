@@ -6,7 +6,10 @@ import { sendOrderNotification } from "../discordBot.js";
 const router = express.Router();
 
 const isRestaurantOpen = () => {
-  const now = new Date();
+  const now = new Date(  now.toLocaleString("en-US", {
+    timeZone: "Europe/Belgrade",
+  })
+);};
 
   const day = now.getDay(); 
   const hour = now.getHours();
