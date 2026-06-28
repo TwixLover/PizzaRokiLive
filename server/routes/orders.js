@@ -9,7 +9,7 @@ const isRestaurantOpen = () => {
   const now = new Date(  now.toLocaleString("en-US", {
     timeZone: "Europe/Belgrade",
   })
-);};
+);
 
   const day = now.getDay(); 
   const hour = now.getHours();
