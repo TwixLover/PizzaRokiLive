@@ -17,8 +17,7 @@
     });
   });
 
-console.log("Status:", res.status);
-console.log(await res.text());
+;
   socket.on("new-order", (order) => {
 
     const wrapper = document.createElement("div");
