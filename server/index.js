@@ -32,7 +32,7 @@ app.use(cookieParser());
 
 app.set("view engine", "ejs");
 app.set("views", path.join(process.cwd(), "views"));
-app.use(express.static(path.join(process.cwd(), "server/public")));
+app.use(express.static(path.join(process.cwd(), "public")));
 
 
 
