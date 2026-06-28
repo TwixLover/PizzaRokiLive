@@ -258,7 +258,10 @@ router.post("/login", async (req, res) => {
       sameSite: "lax",
       secure: true,
       sameSite: "none",
+      path: "/",
     });
+    console.log("COOKIE SET");
+console.log(res.getHeader("Set-Cookie"));
 
     res.json({
       message: "Login successful",
