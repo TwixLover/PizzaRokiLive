@@ -17,7 +17,10 @@ const app = express();
 app.set("trust proxy", true);
 app.use(helmet());
 app.disable("x-powered-by");
-
+app.use(
+  "/bootstrap",
+  express.static("node_modules/bootstrap/dist")
+);
 app.use(cors({
   origin: ["http://localhost:5173",
   "https://pizzarokilive-1.onrender.com",
