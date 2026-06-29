@@ -15,7 +15,24 @@ import helmet from "helmet";
 
 const app = express();
 app.set("trust proxy", true);
-app.use(helmet());
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+
+      scriptSrc: [
+        "'self'",
+        "https://cdn.jsdelivr.net"
+      ],
+
+      styleSrc: [
+        "'self'",
+        "https://cdn.jsdelivr.net",
+        "'unsafe-inline'"
+      ]
+    }
+  })
+);
 app.disable("x-powered-by");
 app.use(
   "/bootstrap",
