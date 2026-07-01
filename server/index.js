@@ -12,7 +12,18 @@ import employeeRoutes from "./routes/employee.js";
 import { createServer } from "http";
 import { Server } from "socket.io";
 import helmet from "helmet";
+import net from "net";
 
+const socket = net.createConnection(587, "smtp-relay.brevo.com");
+
+socket.on("connect", () => {
+  console.log("TCP OK");
+  socket.end();
+});
+
+socket.on("error", (err) => {
+  console.log("TCP ERROR:", err);
+});
 process.on("unhandledRejection", err => {
   console.error("UNHANDLED:", err);
 });
