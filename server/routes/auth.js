@@ -18,6 +18,13 @@ const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASS,
   },
 });
+transporter.verify((err, success) => {
+  if (err) {
+    console.error("SMTP VERIFY ERROR:", err);
+  } else {
+    console.log("SMTP READY");
+  }
+});
 
 /*
    REGISTER
@@ -112,7 +119,21 @@ router.post("/register", async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 });
+router.get("/test-email", async (req, res) => {
+  try {
+    await transporter.sendMail({
+      from: `"Pizza Roki" <${process.env.EMAIL_USER}>`,
+      to: process.env.EMAIL_USER,
+      subject: "Test",
+      text: "Hello",
+    });
 
+    res.send("OK");
+  } catch (err) {
+    console.error(err);
+    res.status(500).send(err.message);
+  }
+});
 /*
    VERIFY EMAIL
 */
@@ -201,6 +222,7 @@ router.post("/resend-verification", async (req, res) => {
 console.log(process.env.EMAIL_PASS ? "PASS OK" : "NO PASS");
 
     await transporter.sendMail({
+        from: `"Pizza Roki" <${process.env.EMAIL_USER}>`,
       to: email,
       subject: "Verify your email",
       html: `Hi ${user.first_name},<br> Please verify your email by clicking the link below:<br><a href="${verifyUrl}">Verify Email</a> <br> <br> Pizza Roki team`,
