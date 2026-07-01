@@ -12,6 +12,9 @@ import employeeRoutes from "./routes/employee.js";
 import { createServer } from "http";
 import { Server } from "socket.io";
 import helmet from "helmet";
+import dns from "dns";
+
+dns.setDefaultResultOrder("ipv4first");
 process.on("uncaughtException", err => {
   console.error("UNCAUGHT:", err);
 });

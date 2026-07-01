@@ -7,17 +7,22 @@ import { OAuth2Client } from "google-auth-library";
 import { requireAuth } from "../../middleware/authMiddleware.js";
 import crypto from "crypto";
 import nodemailer from "nodemailer";
-
+import dns from "dns";
 const router = express.Router();
 const googleClient = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
+
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
+  port: 587,
+  secure: false,
+  family: 4,          // <-- IPv4
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
+  },
+  tls: {
+    rejectUnauthorized: false,
   },
 });
 transporter.verify((err, success) => {
