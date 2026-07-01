@@ -7,26 +7,17 @@ import { OAuth2Client } from "google-auth-library";
 import { requireAuth } from "../../middleware/authMiddleware.js";
 import crypto from "crypto";
 import nodemailer from "nodemailer";
-import dns from "dns";
+
 const router = express.Router();
 const googleClient = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
-
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
+  host: "smtp-relay.brevo.com",
   port: 587,
   secure: false,
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
-  },
-  tls: {
-    rejectUnauthorized: false,
-  },
-  getSocket: undefined,
-  dnsTimeout: 10000,
-  lookup: (hostname, options, callback) => {
-    dns.lookup(hostname, { family: 4 }, callback);
   },
 });
 transporter.verify((err, success) => {
@@ -116,6 +107,7 @@ router.post("/register", async (req, res) => {
     const verifyUrl = `https://pizzarokilive.onrender.com/routes/verify-email/${token}`;
 
     await transporter.sendMail({
+      from: `"Pizza Roki" <${process.env.EMAIL_USER}>`,
       to: email,
       subject: "Verify your email",
       html: `Hi ${first_name},<br> Please verify your email by clicking the link below:<br><a href="${verifyUrl}">Verify Email</a> <br> <br> Pizza Roki team`,
@@ -438,6 +430,7 @@ router.post("/forgot-password", async (req, res) => {
     const resetUrl = `https://pizzarokilive-1.onrender.com/reset-password/${token}`;
 
     await transporter.sendMail({
+      from: `"Pizza Roki" <${process.env.EMAIL_USER}>`,
       to: email,
       subject: "Reset your password",
       html: `Hi ${firstName},<br> You have requested to reset your password. Please click the link below to reset it:<br><a href="${resetUrl}">Reset Password</a> <br> <br> Pizza Roki team`,
