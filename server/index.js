@@ -12,7 +12,13 @@ import employeeRoutes from "./routes/employee.js";
 import { createServer } from "http";
 import { Server } from "socket.io";
 import helmet from "helmet";
+process.on("uncaughtException", err => {
+  console.error("UNCAUGHT:", err);
+});
 
+process.on("unhandledRejection", err => {
+  console.error("UNHANDLED:", err);
+});
 const app = express();
 app.set("trust proxy", true);
 app.use(
@@ -53,7 +59,6 @@ app.use(cookieParser());
 app.set("view engine", "ejs");
 app.set("views", path.join(process.cwd(), "views"));
 app.use(express.static(path.join(process.cwd(), "public")));
-
 
 
 app.use("/routes", authRoutes);
