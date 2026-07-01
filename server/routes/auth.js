@@ -197,6 +197,8 @@ router.post("/resend-verification", async (req, res) => {
     );
 
     const verifyUrl = `https://pizzarokilive.onrender.com/routes/verify-email/${token}`;
+    console.log(process.env.EMAIL_USER);
+console.log(process.env.EMAIL_PASS ? "PASS OK" : "NO PASS");
 
     await transporter.sendMail({
       to: email,
