@@ -6,7 +6,7 @@ import { pool } from "../db.js";
 import { OAuth2Client } from "google-auth-library";
 import { requireAuth } from "../../middleware/authMiddleware.js";
 import crypto from "crypto";
-import { sendEmail } from "email.js";
+import { sendEmail } from "./email.js";
 
 const router = express.Router();
 const googleClient = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
