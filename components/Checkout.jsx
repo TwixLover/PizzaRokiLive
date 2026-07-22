@@ -131,7 +131,7 @@ const restaurantOpen = isRestaurantOpen();
   if (cart.length === 0) {
     return (
       <div className="checkout-page">
-        <Navbar />
+        <Navbar isMenu={true} />
         <div className="container text-center empty-checkout">
           <h3>Your cart is empty 🛒</h3>
           <button
@@ -147,7 +147,7 @@ const restaurantOpen = isRestaurantOpen();
 
   return (
     <div className="checkout-page">
-      <Navbar />
+      <Navbar isMenu={true} />
 
       <div className="container-fluid checkout-wrapper">
         <div className="row justify-content-center">
