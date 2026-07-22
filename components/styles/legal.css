@@ -3,12 +3,13 @@
   background: #f8f8f8;
   padding: 80px 20px;
   font-family: Poppins, sans-serif;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a 50%, #111);
 }
 
 .legal-container {
   max-width: 900px;
   margin: auto;
-  background: white;
+  background: rgb(116, 116, 116);
   padding: 50px;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -16,7 +17,7 @@
 
 .legal-container h1 {
   text-align: center;
-  color: #222;
+  color: #ca5d03;
   margin-bottom: 10px;
 }
 
