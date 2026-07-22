@@ -14,6 +14,7 @@ import PreviousOrders from "../components/previousOrders.jsx";
 import TrackOrder from "../components/trackOrder.jsx";
 import ForgotPassword from "../components/ForgotPassword.jsx";
 import ResetPassword from "../components/ResetPassword.jsx";
+import Legal from "../components/Legal.jsx";
 
 import "./App.css";
 
@@ -33,6 +34,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/reset-password/:token" element={<ResetPassword />} />
+            <Route path="/legal" element={<Legal />} />
 
             {/* VÉDETT OLDALAK */}
             <Route
