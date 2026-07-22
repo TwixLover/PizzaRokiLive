@@ -8,7 +8,7 @@ function Local() {
 
   return (
    <div className="container-1">
-<section className="come-visit-us">
+<section className="come-visit-us" id="about">
   <div className="container">
     <h2>Come Visit Us!</h2>
     <p>Step into our fully equipped space where while you wait for your delicious food, you can catch your favorite sport, challenge your friends to a game of darts, or simply enjoy a refreshing cold drink.</p>
@@ -35,7 +35,7 @@ function Local() {
         <p>Looking for the perfect venue for a birthday, corporate gathering, or any special occasion? **Our fully equipped room is available for private hire!** Get the party started—booking your exclusive space is also just **one phone call away!**</p>
         <button className="call-to-action">Call Us to Book Now!</button>
     </div>
-    <div className="location-map">
+    <div className="location-map" id="locations">
         <h3>📍 Where to find us?</h3>
         <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2807.591242398516!2d20.385573776269668!3d45.385869440626086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a409745a8ab4b%3A0x1d4734612e4f3a74!2sAranj%20Jano%C5%A1a%2032a%2C%20Zrenjanin%2023000%2C%20Serbia!5e0!3m2!1sen!2shu!4v1700000000000!5m2!1sen!2shu"
