@@ -14,7 +14,7 @@ import PreviousOrders from "../components/previousOrders.jsx";
 import TrackOrder from "../components/trackOrder.jsx";
 import ForgotPassword from "../components/ForgotPassword.jsx";
 import ResetPassword from "../components/ResetPassword.jsx";
-import Legal from "../components/Legal.jsx";
+import Legal from "../components/legal.jsx";
 
 import "./App.css";
 
