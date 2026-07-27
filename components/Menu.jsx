@@ -214,8 +214,10 @@ const Menu = () => {
   const others = menuItems.filter((i) => i.type === "Other");
 
   return (
-    <div className="menu">
+    <div>
       <Navbar isMenuPage={true} />
+    <div className="menu">
+      
 
    
       <div className="builder-hero">
@@ -286,6 +288,7 @@ const Menu = () => {
       </div>
 
       <Footer />
+    </div>
     </div>
   );
 };
