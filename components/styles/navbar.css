@@ -258,6 +258,8 @@
   }
   .profile-dropdown .dropdown-menu li {
     padding: 0;
+    padding-left: 0;
+    padding-right: 10px;
     margin-bottom: 10px;
   }
   .profile-dropdown .dropdown-menu li a {
