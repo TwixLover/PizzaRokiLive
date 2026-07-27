@@ -45,12 +45,15 @@ export default function PreviousOrders() {
 
   if (orders.length === 0) {
     return (
-      <div className="previous-orders empty">
+      <div>
         <Navbar isMenuPage={true}></Navbar>
+      <div className="previous-orders empty">
+        
         <h2>No previous orders yet</h2>
         <button onClick={() => navigate("/menu")}>
           Order Now
         </button>
+      </div>
       </div>
     );
   }
