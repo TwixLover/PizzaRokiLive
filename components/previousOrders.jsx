@@ -45,7 +45,7 @@ export default function PreviousOrders() {
 
   if (orders.length === 0) {
     return (
-      <div>
+      <div className="previous-orders-main">
         <Navbar isMenuPage={true}></Navbar>
       <div className="previous-orders empty">
         
