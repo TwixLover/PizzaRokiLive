@@ -19,7 +19,7 @@ function Header() {
 
       <div className="video-overlay"></div>
 
-      <div className="header-content" style={{ paddingLeft: "7%" }}>
+      <div className="header-content" style={{ paddingLeft: "15px" }}>
         <Navbar isMenuPage={false} />
       </div>
 
