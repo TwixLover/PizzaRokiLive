@@ -256,6 +256,15 @@
     background: transparent;
     border: none;
   }
+  .profile-dropdown .dropdown-menu li {
+    padding: 0;
+    margin-bottom: 10px;
+  }
+  .profile-dropdown .dropdown-menu li a {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+  }
   .profile-dropdown.mobile-open .dropdown-menu {
     display: flex;
     flex-direction: column;
