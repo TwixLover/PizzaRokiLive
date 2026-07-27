@@ -3,7 +3,10 @@
   color: white;
 }
 
-/* ================= HERO CTA ================= */
+.nav {
+  background: transparent;
+}
+
 .builder-hero {
   position: relative;
   height: 90vh;
@@ -62,7 +65,6 @@
   box-shadow: 0 12px 35px rgba(255, 99, 71, 0.7);
 }
 
-/* ================= SECTIONS ================= */
 .menu-section {
   padding: 100px 10%;
 }
@@ -72,7 +74,6 @@
   font-weight: 800;
 }
 
-/* ================= ROW LAYOUT ================= */
 .menu-row {
   display: flex;
   align-items: center;
@@ -147,7 +148,6 @@
   transform: scale(1.05);
 }
 
-/* ================= SIZE PICKER ================= */
 .size-picker {
   display: flex;
   gap: 12px;
@@ -239,7 +239,6 @@
   color: black;
 }
 
-/* ================= MOBILE ================= */
 @media (max-width: 900px) {
   .menu-row {
     flex-direction: column !important;
