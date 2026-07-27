@@ -41,9 +41,6 @@
 .Header-nav ul li a:hover {
   color: #ff6347;
 }
-.Header-nav ul {
-  /* ================= ICONS RIGHT ================= */
-}
 .Header-nav ul .icons-right {
   display: flex;
   gap: 150%;
@@ -80,9 +77,6 @@
 }
 .Header-nav ul .icons-right a:hover .login:hover {
   fill: #ff6347;
-}
-.Header-nav ul .icons-right {
-  /* ================= CART BADGE ================= */
 }
 .Header-nav ul .icons-right .cart-link {
   position: relative;
@@ -156,7 +150,6 @@
   transform: translateY(0);
 }
 
-/* ================= BADGE ANIMATION ================= */
 @keyframes popIn {
   from {
     transform: scale(0.6);
@@ -202,7 +195,6 @@
   transform: rotate(-45deg) translateY(-9px);
 }
 
-/* ================= MOBILE ================= */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -260,7 +252,7 @@
     opacity: 1;
     visibility: visible;
     display: none;
-    padding-right: 15%;
+    padding-right: 7%;
     background: transparent;
     border: none;
   }
