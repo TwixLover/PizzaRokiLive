@@ -214,7 +214,7 @@ const Menu = () => {
   const others = menuItems.filter((i) => i.type === "Other");
 
   return (
-    <div>
+    <div className="nav">
       <Navbar isMenuPage={true} />
     <div className="menu">
       
