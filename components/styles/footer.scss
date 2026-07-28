@@ -38,7 +38,8 @@
     }
     .footer-logo {
       flex: 1;
-
+display:flex;
+    justify-content:center;
       img {
         width: 160px;
       }
@@ -83,12 +84,13 @@
       }
 
       .social-col {
+        text-align: center;
         .social-icons {
             display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:15px;
-    margin:15px 0;
+            justify-content:center;
+           align-items:center;
+            gap:15px;
+            margin:15px 0;
 
           a {
             width: 40px;

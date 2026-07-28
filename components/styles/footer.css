@@ -36,6 +36,8 @@
 }
 .footer .footer-top .footer-logo {
   flex: 1;
+  display: flex;
+  justify-content: center;
 }
 .footer .footer-top .footer-logo img {
   width: 160px;
@@ -71,6 +73,9 @@
 }
 .footer .footer-top .footer-columns ul li a:hover {
   color: #fff;
+}
+.footer .footer-top .footer-columns .social-col {
+  text-align: center;
 }
 .footer .footer-top .footer-columns .social-col .social-icons {
   display: flex;
