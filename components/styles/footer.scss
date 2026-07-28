@@ -17,17 +17,18 @@
         
     
 .back-top {
-     width:60px;
-    height:60px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:10px;
-    background:#2d333b;
-    color:#ff4d4d;
-    text-decoration:none;
-    font-size:28px;
-    transition:.3s;
+      margin-top: 60px;
+      margin-bottom: 5px;
+      margin-left: 10px;
+      margin-right: 22px;
+      display: inline-block;
+      background: #2d333b;
+      padding: 5px 16px;
+      border-radius: 8px;
+      color: #dd4343;
+      text-decoration: none;
+      transition: 0.3s;
+      font-size: 28px;
 
       &:hover {
         background: #ff4d4d;
@@ -36,6 +37,7 @@
     }
     }
     .footer-logo {
+      flex: 1;
       display:flex;
     justify-content:center;
 
@@ -84,13 +86,11 @@
 
       .social-col {
         .social-icons {
-          display: flex;
-          gap: 15px;
-          margin-bottom: 12px;
-          margin-left: 10px;
-          justify-content:center;
+          display:flex;
+    justify-content:center;
     align-items:center;
-
+    gap:15px;
+    margin:15px 0;
           a {
             width: 40px;
             height: 40px;
@@ -182,8 +182,8 @@
       flex-direction: column;
 
       .footer-columns {
-        grid-template-columns: repeat(2, 1fr);
-      }
+       grid-template-columns:1fr;
+    }
     }
   }
 
