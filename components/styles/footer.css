@@ -162,6 +162,10 @@
     grid-template-columns: 1fr;
     text-align: center;
   }
+  .footer .footer-columns .social-col {
+    position: relative;
+    left: 56%;
+  }
   .footer .footer-columns .social-col .social-icons {
     justify-content: center;
   }
