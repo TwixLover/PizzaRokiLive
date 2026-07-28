@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles/footer.css";
 import { Link } from "react-router-dom";
+import { FaArrowUp } from "react-icons/fa";
 
 function Footer() {
   return (
@@ -48,7 +49,7 @@ function Footer() {
                   <a href="/#locations">Locations</a>
                 </li>
                 <li>
-                  <li><a href="/legal">Legal</a></li>
+                  <a href="/legal">Legal</a>
                 </li>
               </ul>
             </div>
@@ -64,11 +65,11 @@ function Footer() {
           </div>
 
           <div className="back">
-            <a href="#" className="back-top">
-              🢁
-            </a>
-            <p className="back-text">Back to top</p>
-          </div>
+  <a href="#" className="back-top">
+    <FaArrowUp />
+  </a>
+  <p className="back-text">Back to top</p>
+</div>
         </div>
 
         <div className="footer-bottom">
