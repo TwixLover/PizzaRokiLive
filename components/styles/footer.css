@@ -36,8 +36,6 @@
 }
 .footer .footer-top .footer-logo {
   flex: 1;
-  display: flex;
-  justify-content: center;
 }
 .footer .footer-top .footer-logo img {
   width: 160px;
@@ -151,7 +149,7 @@
     flex-direction: column;
   }
   .footer .footer-top .footer-columns {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width: 600px) {
