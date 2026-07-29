@@ -10,7 +10,7 @@ function Footer() {
         <div className="footer-top">
           <div className="footer-logo">
             <img
-              src="https://i.ibb.co/xqKF3Wzp/logo-white.png"
+              src="https://res.cloudinary.com/qldrbs1y/image/upload/v1785348019/logo-white_zn9yu0.png"
               alt="Logo"
             />
           </div>
