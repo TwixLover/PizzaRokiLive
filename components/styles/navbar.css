@@ -18,8 +18,7 @@
   display: flex;
   flex-direction: row;
 }
-.Header-nav .nav-links {
-  display: flex;
+.Header-nav .nav {
   gap: 111px;
   padding-right: 200px;
 }
@@ -42,50 +41,50 @@
 .Header-nav ul li a:hover {
   color: #ff6347;
 }
-.Header-nav ul .nav-icons {
+.Header-nav ul .icons-right {
   display: flex;
   gap: 150%;
   align-items: center;
   justify-content: center;
 }
-.Header-nav ul .nav-icons li {
+.Header-nav ul .icons-right li {
   position: relative;
 }
-.Header-nav ul .nav-icons .cart {
+.Header-nav ul .icons-right .cart {
   margin-top: 8px;
 }
-.Header-nav ul .nav-icons .login {
+.Header-nav ul .icons-right .login {
   margin-bottom: 3px;
 }
-.Header-nav ul .nav-icons .logins {
+.Header-nav ul .icons-right .logins {
   margin-bottom: 3px;
 }
-.Header-nav ul .nav-icons .logins:hover {
+.Header-nav ul .icons-right .logins:hover {
   fill: #ff6347;
   stroke: #ff6347;
   transform: scale(1.1);
   transition: transform 0.2s ease;
 }
-.Header-nav ul .nav-icons a {
+.Header-nav ul .icons-right a {
   position: relative;
 }
-.Header-nav ul .nav-icons a svg {
+.Header-nav ul .icons-right a svg {
   transition: fill 0.3s ease, transform 0.2s ease;
 }
-.Header-nav ul .nav-icons a:hover svg {
+.Header-nav ul .icons-right a:hover svg {
   stroke: #ff6347;
   transform: scale(1.1);
 }
-.Header-nav ul .nav-icons a:hover .login:hover {
+.Header-nav ul .icons-right a:hover .login:hover {
   fill: #ff6347;
 }
-.Header-nav ul .nav-icons .cart-link {
+.Header-nav ul .icons-right .cart-link {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
-.Header-nav ul .nav-icons .cart-link .cart-badge {
+.Header-nav ul .icons-right .cart-link .cart-badge {
   position: absolute;
   top: -6px;
   right: -8px;
@@ -102,15 +101,13 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   animation: popIn 0.2s ease;
 }
-.Header-nav ul .nav-icons .nav-cart,
-.Header-nav ul .nav-icons .nav-login {
+.Header-nav ul .icons-right.cart, .Header-nav ul .icons-right.login {
   padding-left: 100px;
   cursor: pointer;
 }
-.Header-nav ul .nav-icons .nav-cart svg,
-.Header-nav ul .nav-icons .nav-cart path,
-.Header-nav ul .nav-icons .nav-login svg,
-.Header-nav ul .nav-icons .nav-login path {
+.Header-nav ul .icons-right.cart svg,
+.Header-nav ul .icons-right.cart path, .Header-nav ul .icons-right.login svg,
+.Header-nav ul .icons-right.login path {
   transition: fill 0.3s ease;
 }
 
@@ -205,7 +202,7 @@
   .Header-nav {
     position: fixed;
     top: 0;
-    right: 0;
+    right: 0%;
     height: auto;
     width: 200px;
     background: rgba(0, 0, 0, 0.95);
@@ -216,24 +213,12 @@
     z-index: 1000;
     padding-top: 100px;
     padding-bottom: 50px;
-    padding-left: 0;
-    padding-right: 0;
-    border-bottom: none;
-  }
-  .Header-nav.is-menu-nav {
-    padding-left: 0;
-    padding-right: 0;
-    padding-bottom: 50px;
-    border-bottom: none;
-    background: rgba(0, 0, 0, 0.95);
   }
   .Header-nav ul {
-    width: 100%;
     flex-direction: column;
     align-items: flex-start;
     gap: 25px;
     padding-left: 35px;
-    padding-right: 0;
   }
   .Header-nav ul .Header-logo {
     position: relative;
@@ -243,26 +228,22 @@
   .Header-nav ul li a {
     font-size: 16px;
   }
-  .Header-nav ul .nav-icons {
+  .Header-nav ul .icons-right {
     margin-top: 30px;
   }
-  .Header-nav .nav-links {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+  .Header-nav .nav {
     padding: 0;
-    width: auto;
   }
   .Header-nav.open {
     transform: translateX(0);
     opacity: 1;
   }
-  .Header-nav.open .nav-icons {
+  .Header-nav.open .icons-right {
     position: relative;
     left: -10%;
     gap: 80%;
   }
-  .Header-nav.open .nav-icons li {
+  .Header-nav.open .icons-right li {
     padding-left: 0;
   }
   .profile-dropdown .dropdown-menu {
@@ -289,17 +270,6 @@
   .profile-dropdown.mobile-open .dropdown-menu {
     display: flex;
     flex-direction: column;
-  }
-  .Header-nav .nav-icons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: auto;
-    gap: 80%;
-  }
-  .Header-nav .nav-icons .nav-cart,
-  .Header-nav .nav-icons .nav-login {
-    padding-left: 0;
   }
 }
 @media (max-width: 480px) {
