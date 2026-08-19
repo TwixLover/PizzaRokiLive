@@ -42,7 +42,7 @@ navigate("/login");
 
 const handleProfileClick = (e) => {
 if (window.innerWidth <= 768 && isLoggedIn) { e.preventDefault(); setProfileOpen(!profileOpen); } }; const
-  navClass=`Header-nav ${menuOpen ? "open" : "" } ${ isMenuPage ? "is-menu-nav" : "" }`; return ( <>
+  navClass=`Header-nav ${menuOpen ? "open" : "" } `; return ( <>
   <div className={`hamburger ${menuOpen ? "active" : "" }`} onClick={()=> setMenuOpen(!menuOpen)}
     >
     <span></span>
