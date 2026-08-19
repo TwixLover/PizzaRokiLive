@@ -235,7 +235,7 @@
   color: black;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .menu-row {
     flex-direction: column !important;
     text-align: center;
@@ -245,6 +245,9 @@
     margin-bottom: 30px;
   }
   .menu-row .actions {
+    justify-content: center;
+  }
+  .size-picker {
     justify-content: center;
   }
   .builder-cta h1 {

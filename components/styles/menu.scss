@@ -270,7 +270,7 @@ $dark: #0e0e0e;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .menu-row {
     flex-direction: column !important;
     text-align: center;
@@ -284,7 +284,9 @@ $dark: #0e0e0e;
       justify-content: center;
     }
   }
-
+.size-picker {
+    justify-content: center;
+  }
   .builder-cta h1 {
     font-size: 2.2rem;
   }
