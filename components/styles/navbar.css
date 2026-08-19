@@ -222,7 +222,6 @@
   }
   .Header-nav ul .Header-logo {
     position: relative;
-    left: -20%;
     top: -7%;
   }
   .Header-nav ul li a {
@@ -240,7 +239,6 @@
   }
   .Header-nav.open .icons-right {
     position: relative;
-    left: -10%;
     gap: 80%;
   }
   .Header-nav.open .icons-right li {
