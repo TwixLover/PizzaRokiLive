@@ -28,7 +28,7 @@ $secColor: #ff6347;
     padding-right: 200px;
   }
 
-  ul {
+  > ul {
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -38,6 +38,8 @@ $secColor: #ff6347;
     margin-bottom: 0;
 
     li {
+      list-style: none;
+
       a {
         text-decoration: none;
         color: white;
@@ -246,7 +248,12 @@ $secColor: #ff6347;
   }
 }
 
+/* =========================================================
+   MOBILE NAVBAR
+   ========================================================= */
+
 @media (max-width: 768px) {
+
   .hamburger {
     display: flex;
   }
@@ -255,30 +262,24 @@ $secColor: #ff6347;
     position: fixed;
     top: 0;
     right: 0;
-    height: auto;
+
     width: 200px;
+    height: auto;
 
     background: rgba(0, 0, 0, 0.95);
+
     border-left: 1px solid rgba(255, 255, 255, 0.1);
 
     transform: translateX(100%);
     opacity: 0;
 
-    transition: all 0.4s ease;
+    transition:
+      transform 0.4s ease,
+      opacity 0.4s ease;
 
     z-index: 1000;
 
-    padding-top: 100px;
-    padding-bottom: 50px;
-
-    /*
-      FONTOS:
-      Mobilon teljesen függetlenítjük a navot az
-      is-menu-nav desktop beállításaitól.
-    */
-    padding-left: 0;
-    padding-right: 0;
-    border-bottom: none;
+    padding: 60px 0 50px 0;
 
     &.is-menu-nav {
       padding-left: 0;
@@ -288,112 +289,207 @@ $secColor: #ff6347;
       background: rgba(0, 0, 0, 0.95);
     }
 
-    ul {
+
+    > ul {
       width: 100%;
+
+      display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      gap: 25px;
-      padding-left: 35px;
-      padding-right: 0;
 
-      .Header-logo {
-        position: relative;
-        left: -20%;
-        top: -7%;
+      align-items: center;
+      justify-content: flex-start;
+
+      gap: 0;
+
+      padding: 0;
+      margin: 0;
+    }
+
+    /*
+      LOGO
+    */
+    .Header-logo {
+      position: static;
+
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      margin: 0 0 55px 0;
+      padding: 0;
+    }
+
+    .Header-logo img {
+      width: 110px;
+      height: auto;
+      margin: 0;
+    }
+
+    /*
+      HOME / MENU / PROFILE
+    */
+    .nav-links {
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 34px;
+
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-links > li {
+      width: auto;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+    }
+
+    .nav-links > li > a {
+      display: block;
+
+      font-size: 16px;
+      line-height: 1;
+
+      padding: 0;
+      margin: 0;
+    }
+
+    /*
+      PROFILE DROPDOWN
+    */
+    .profile-dropdown {
+      position: relative;
+
+      .dropdown-menu {
+        position: static;
+
+        width: 100%;
+
+        transform: none;
+
+        opacity: 1;
+        visibility: visible;
+
+        display: none;
+
+        padding: 15px 0 0 0;
+
+        background: transparent;
+
+        border: none;
+        border-radius: 0;
+
+        min-width: 0;
+
+        gap: 12px;
+
+        li {
+          padding: 0;
+          margin: 0;
+
+          a {
+            font-size: 14px;
+            font-weight: 600;
+          }
+        }
       }
 
-      li a {
-        font-size: 16px;
-      }
-
-      .nav-icons {
-        margin-top: 30px;
+      &.mobile-open .dropdown-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
     }
 
-    .nav-links {
+    /*
+      CART + LOGIN
+    */
+    .nav-icons {
+      width: 100%;
+
       display: flex;
-      flex-direction: column;
-      gap: 25px;
+
+      flex-direction: row;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 55px;
+
       padding: 0;
+      margin: 55px 0 0 0;
+
+      position: static;
+    }
+
+    .nav-icons li {
+      position: relative;
+
+      padding: 0 !important;
+      margin: 0;
+
       width: auto;
     }
 
+    .nav-icons .nav-cart,
+    .nav-icons .nav-login {
+      padding-left: 0 !important;
+    }
+
+    .nav-icons .cart {
+      margin-top: 0;
+    }
+
+    .nav-icons .login {
+      margin-bottom: 0;
+    }
+
+    /*
+      OPEN STATE
+    */
     &.open {
       transform: translateX(0);
       opacity: 1;
-
-      .nav-icons {
-        position: relative;
-        left: -10%;
-        gap: 80%;
-
-        li {
-          padding-left: 0;
-        }
-      }
     }
-  }
-
-  .profile-dropdown {
-    .dropdown-menu {
-      position: static;
-      transform: none;
-      opacity: 1;
-      visibility: visible;
-      display: none;
-      padding-right: 7%;
-      background: transparent;
-      border: none;
-
-      li {
-        padding: 0;
-        padding-left: 0;
-        padding-right: 10px;
-        margin-bottom: 10px;
-
-        a {
-          color: white;
-          font-size: 16px;
-          font-weight: 600;
-        }
-      }
-    }
-
-    &.mobile-open .dropdown-menu {
-      display: flex;
-      flex-direction: column;
-    }
-  }
-
-  /*
-    Mobilon az ikonok saját elrendezést kapnak,
-    így az oldal CSS-e nem tudja őket eltolni.
-  */
-  .Header-nav .nav-icons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: auto;
-    gap: 80%;
-  }
-
-  .Header-nav .nav-icons .nav-cart,
-  .Header-nav .nav-icons .nav-login {
-    padding-left: 0;
   }
 }
 
-@media (max-width: 480px) {
-  .header-content {
-    padding: 10px 20px;
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
 
-    .Header-logo img {
-      width: 80px;
+@media (max-width: 480px) {
+
+  .Header-nav {
+    width: 200px;
+
+    .Header-logo {
+      margin-bottom: 50px;
     }
 
-    .Header-nav ul li a {
-      font-size: 14px;
+    .Header-logo img {
+      width: 105px;
+    }
+
+    .nav-links {
+      gap: 32px;
+    }
+
+    .nav-links > li > a {
+      font-size: 15px;
+    }
+
+    .nav-icons {
+      margin-top: 50px;
+      gap: 50px;
     }
   }
 }
