@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/header.css";
 import Navbar from "./utils/Navbar.jsx";
 import { Link } from "react-router-dom";
 
 function Header() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <header className="header">
 
-    
       <video
         className="header-video"
         autoPlay
@@ -20,7 +33,7 @@ function Header() {
       <div className="video-overlay"></div>
 
       <div className="header-content">
-        <Navbar isMenuPage={false} />
+        <Navbar isMenuPage={isMobile} />
       </div>
 
       <div className="main container">
