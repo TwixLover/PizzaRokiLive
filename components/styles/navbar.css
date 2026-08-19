@@ -23,7 +23,7 @@
   gap: 111px;
   padding-right: 200px;
 }
-.Header-nav > ul {
+.Header-nav ul {
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -32,63 +32,60 @@
   gap: 120px;
   margin-bottom: 0;
 }
-.Header-nav > ul li {
-  list-style: none;
-}
-.Header-nav > ul li a {
+.Header-nav ul li a {
   text-decoration: none;
   color: white;
   font-weight: 700;
   font-size: 20px;
   transition: color 0.3s ease;
 }
-.Header-nav > ul li a:hover {
+.Header-nav ul li a:hover {
   color: #ff6347;
 }
-.Header-nav > ul .nav-icons {
+.Header-nav ul .nav-icons {
   display: flex;
   gap: 150%;
   align-items: center;
   justify-content: center;
 }
-.Header-nav > ul .nav-icons li {
+.Header-nav ul .nav-icons li {
   position: relative;
 }
-.Header-nav > ul .nav-icons .cart {
+.Header-nav ul .nav-icons .cart {
   margin-top: 8px;
 }
-.Header-nav > ul .nav-icons .login {
+.Header-nav ul .nav-icons .login {
   margin-bottom: 3px;
 }
-.Header-nav > ul .nav-icons .logins {
+.Header-nav ul .nav-icons .logins {
   margin-bottom: 3px;
 }
-.Header-nav > ul .nav-icons .logins:hover {
+.Header-nav ul .nav-icons .logins:hover {
   fill: #ff6347;
   stroke: #ff6347;
   transform: scale(1.1);
   transition: transform 0.2s ease;
 }
-.Header-nav > ul .nav-icons a {
+.Header-nav ul .nav-icons a {
   position: relative;
 }
-.Header-nav > ul .nav-icons a svg {
+.Header-nav ul .nav-icons a svg {
   transition: fill 0.3s ease, transform 0.2s ease;
 }
-.Header-nav > ul .nav-icons a:hover svg {
+.Header-nav ul .nav-icons a:hover svg {
   stroke: #ff6347;
   transform: scale(1.1);
 }
-.Header-nav > ul .nav-icons a:hover .login:hover {
+.Header-nav ul .nav-icons a:hover .login:hover {
   fill: #ff6347;
 }
-.Header-nav > ul .nav-icons .cart-link {
+.Header-nav ul .nav-icons .cart-link {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
-.Header-nav > ul .nav-icons .cart-link .cart-badge {
+.Header-nav ul .nav-icons .cart-link .cart-badge {
   position: absolute;
   top: -6px;
   right: -8px;
@@ -105,15 +102,15 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   animation: popIn 0.2s ease;
 }
-.Header-nav > ul .nav-icons .nav-cart,
-.Header-nav > ul .nav-icons .nav-login {
+.Header-nav ul .nav-icons .nav-cart,
+.Header-nav ul .nav-icons .nav-login {
   padding-left: 100px;
   cursor: pointer;
 }
-.Header-nav > ul .nav-icons .nav-cart svg,
-.Header-nav > ul .nav-icons .nav-cart path,
-.Header-nav > ul .nav-icons .nav-login svg,
-.Header-nav > ul .nav-icons .nav-login path {
+.Header-nav ul .nav-icons .nav-cart svg,
+.Header-nav ul .nav-icons .nav-cart path,
+.Header-nav ul .nav-icons .nav-login svg,
+.Header-nav ul .nav-icons .nav-login path {
   transition: fill 0.3s ease;
 }
 
@@ -201,9 +198,6 @@
   transform: rotate(-45deg) translateY(-9px);
 }
 
-/* =========================================================
-   MOBILE NAVBAR
-   ========================================================= */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -212,15 +206,19 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: 200px;
     height: auto;
+    width: 200px;
     background: rgba(0, 0, 0, 0.95);
     border-left: 1px solid rgba(255, 255, 255, 0.1);
     transform: translateX(100%);
     opacity: 0;
-    transition: transform 0.4s ease, opacity 0.4s ease;
+    transition: all 0.4s ease;
     z-index: 1000;
-    padding: 60px 0 50px 0;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    padding-left: 0;
+    padding-right: 0;
+    border-bottom: none;
   }
   .Header-nav.is-menu-nav {
     padding-left: 0;
@@ -229,162 +227,90 @@
     border-bottom: none;
     background: rgba(0, 0, 0, 0.95);
   }
-  .Header-nav > ul {
+  .Header-nav ul {
     width: 100%;
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0;
-    padding: 0;
-    margin: 0;
+    align-items: flex-start;
+    gap: 25px;
+    padding-left: 35px;
+    padding-right: 0;
   }
-  .Header-nav {
-    /*
-      LOGO
-    */
+  .Header-nav ul .Header-logo {
+    position: relative;
+    left: -20%;
+    top: -7%;
   }
-  .Header-nav .Header-logo {
-    position: static;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 0 55px 0;
-    padding: 0;
+  .Header-nav ul li a {
+    font-size: 16px;
   }
-  .Header-nav .Header-logo img {
-    width: 110px;
-    height: auto;
-    margin: 0;
-  }
-  .Header-nav {
-    /*
-      HOME / MENU / PROFILE
-    */
+  .Header-nav ul .nav-icons {
+    margin-top: 30px;
   }
   .Header-nav .nav-links {
-    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 34px;
+    gap: 25px;
     padding: 0;
-    margin: 0;
-  }
-  .Header-nav .nav-links > li {
     width: auto;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-  }
-  .Header-nav .nav-links > li > a {
-    display: block;
-    font-size: 16px;
-    line-height: 1;
-    padding: 0;
-    margin: 0;
-  }
-  .Header-nav {
-    /*
-      PROFILE DROPDOWN
-    */
-  }
-  .Header-nav .profile-dropdown {
-    position: relative;
-  }
-  .Header-nav .profile-dropdown .dropdown-menu {
-    position: static;
-    width: 100%;
-    transform: none;
-    opacity: 1;
-    visibility: visible;
-    display: none;
-    padding: 15px 0 0 0;
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    min-width: 0;
-    gap: 12px;
-  }
-  .Header-nav .profile-dropdown .dropdown-menu li {
-    padding: 0;
-    margin: 0;
-  }
-  .Header-nav .profile-dropdown .dropdown-menu li a {
-    font-size: 14px;
-    font-weight: 600;
-  }
-  .Header-nav .profile-dropdown.mobile-open .dropdown-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .Header-nav {
-    /*
-      CART + LOGIN
-    */
-  }
-  .Header-nav .nav-icons {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 55px;
-    padding: 0;
-    margin: 55px 0 0 0;
-    position: static;
-  }
-  .Header-nav .nav-icons li {
-    position: relative;
-    padding: 0 !important;
-    margin: 0;
-    width: auto;
-  }
-  .Header-nav .nav-icons .nav-cart,
-  .Header-nav .nav-icons .nav-login {
-    padding-left: 0 !important;
-  }
-  .Header-nav .nav-icons .cart {
-    margin-top: 0;
-  }
-  .Header-nav .nav-icons .login {
-    margin-bottom: 0;
-  }
-  .Header-nav {
-    /*
-      OPEN STATE
-    */
   }
   .Header-nav.open {
     transform: translateX(0);
     opacity: 1;
   }
-}
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
-@media (max-width: 480px) {
-  .Header-nav {
-    width: 200px;
+  .Header-nav.open .nav-icons {
+    position: relative;
+    left: -10%;
+    gap: 80%;
   }
-  .Header-nav .Header-logo {
-    margin-bottom: 50px;
+  .Header-nav.open .nav-icons li {
+    padding-left: 0;
   }
-  .Header-nav .Header-logo img {
-    width: 105px;
+  .profile-dropdown .dropdown-menu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    display: none;
+    padding-right: 7%;
+    background: transparent;
+    border: none;
   }
-  .Header-nav .nav-links {
-    gap: 32px;
+  .profile-dropdown .dropdown-menu li {
+    padding: 0;
+    padding-left: 0;
+    padding-right: 10px;
+    margin-bottom: 10px;
   }
-  .Header-nav .nav-links > li > a {
-    font-size: 15px;
+  .profile-dropdown .dropdown-menu li a {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .profile-dropdown.mobile-open .dropdown-menu {
+    display: flex;
+    flex-direction: column;
   }
   .Header-nav .nav-icons {
-    margin-top: 50px;
-    gap: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    gap: 80%;
+  }
+  .Header-nav .nav-icons .nav-cart,
+  .Header-nav .nav-icons .nav-login {
+    padding-left: 0;
+  }
+}
+@media (max-width: 480px) {
+  .header-content {
+    padding: 10px 20px;
+  }
+  .header-content .Header-logo img {
+    width: 80px;
+  }
+  .header-content .Header-nav ul li a {
+    font-size: 14px;
   }
 }
 
