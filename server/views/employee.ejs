@@ -107,6 +107,28 @@
 <script
   src="../routes/employee.js"></script>
 
+<script>
+  const socket = io();
 
+  socket.on("connect", () => {
+    console.log("🟢 Employee Socket connected:", socket.id);
+  });
+
+  socket.on("connect_error", (error) => {
+    console.error("🔴 Socket connection error:", error);
+  });
+
+  socket.on("disconnect", (reason) => {
+    console.log("🟠 Socket disconnected:", reason);
+  });
+
+  socket.on("new-order", (order) => {
+    console.log("📦 NEW ORDER RECEIVED:", order);
+  });
+
+  socket.on("order-delivered", (order) => {
+    console.log("🗑️ ORDER DELIVERED:", order);
+  });
+</script>
 </body>
 </html>
