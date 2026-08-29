@@ -108,6 +108,27 @@ router.post("/", requireAuth, async (req, res) => {
 
     await db.query("COMMIT");
 
+const io = req.app.get("io");
+
+console.log("📡 EMITTING NEW ORDER:", orderId);
+
+io.emit("new-order", {
+  id: orderId,
+  total_amount: price,
+  status: "pending",
+
+  delivery_first_name: delivery.first_name,
+  delivery_last_name: delivery.last_name,
+  delivery_phone: delivery.phone,
+  delivery_street: delivery.street,
+  delivery_house_number: delivery.house_number,
+  delivery_city: delivery.city,
+  delivery_postal_code: delivery.postal_code,
+
+  notes,
+  items
+});
+
 sendOrderNotification({
   orderId,
   delivery,
