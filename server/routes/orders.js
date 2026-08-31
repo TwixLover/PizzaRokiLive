@@ -25,7 +25,7 @@ const hour = localTime.getHours();
     return false;
   }
 
-  if (hour < 12 || hour >= 22) {
+  if (hour < 7 || hour >= 22) {
     return false;
   }
 
